@@ -5,7 +5,7 @@ import ModalApp from "./Modal/ModalApp";
 const Form = () => {
   const [isOpenForm, setIsOpenForm] = useState(false);
   const handleClick = () => {
-    console.log(1);
+    // console.log(1);
     setIsOpenForm((prev) => !prev);
   };
   return (
