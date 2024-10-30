@@ -74,7 +74,7 @@ const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
           <div className="form-group mb-3">
             <label>Username:</label>
             <input
-            id="#username"
+            id="username"
               type="text"
               name="username"
               className="form-control"
@@ -86,7 +86,7 @@ const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
           <div className="form-group mb-3">
             <label>Email Address:</label>
             <input
-              id="#email"
+              id="email"
               type="email"
               name="email"
               className="form-control"
@@ -98,7 +98,7 @@ const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
           <div className="form-group mb-3">
             <label>Phone Number:</label>
             <input
-              id="#phone"
+              id="phone"
               type="tel"
               name="phone"
               className="form-control"
@@ -110,7 +110,7 @@ const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
           <div className="form-group mb-4">
             <label>Date of Birth:</label>
             <input
-              id="#dob"
+              id="dob"
               type="date"
               name="dob"
               className="form-control"
