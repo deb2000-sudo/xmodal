@@ -1,9 +1,9 @@
-
+import Form from "./components/Form";
 
 const App=()=> {
   return (
     <div className="App">
-      <h1>This is XModal</h1>
+      <Form/>
     </div>
   );
 }
