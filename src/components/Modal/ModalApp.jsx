@@ -35,19 +35,21 @@ const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateEmail(formData.email)) {
-        alert("Invalid email. Please check your email address.");
-        return;
-      }
-  
-      if (!validatePhone(formData.phone)) {
-        alert("Invalid phone number. Please enter a 10-digit phone number.");
-        return;
-      }
-  
-      if (!validateDOB(formData.dob)) {
-        alert("Invalid date of birth. Please enter the date in YYYY-MM-DD format.");
-        return;
-      }
+      alert("Invalid email. Please check your email address.");
+      return;
+    }
+
+    if (!validatePhone(formData.phone)) {
+      alert("Invalid phone number. Please enter a 10-digit phone number.");
+      return;
+    }
+
+    if (!validateDOB(formData.dob)) {
+      alert(
+        "Invalid date of birth. Please enter the date in YYYY-MM-DD format."
+      );
+      return;
+    }
     console.log("Form Data Submitted:", formData);
     handleModalClose();
   };
@@ -58,7 +60,7 @@ const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
       margin: "auto",
       borderRadius: "10px",
       padding: "25px",
-      maxHeight:"600px"
+      maxHeight: "600px",
     },
   };
   return (
@@ -74,7 +76,7 @@ const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
           <div className="form-group mb-3">
             <label>Username:</label>
             <input
-            id="username"
+              id="username"
               type="text"
               name="username"
               className="form-control"

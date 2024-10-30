@@ -14,12 +14,15 @@ const Form = () => {
       <button className={styles.mybutton} onClick={handleClick}>
         Open Form
       </button>
-      <div className="modal">
-        <ModalApp
-          isModalOpen={isOpenForm}
-          setIsOpenForm={setIsOpenForm}
-        ></ModalApp>
-      </div>
+
+      {isOpenForm && (
+        <div className="modal">
+          <ModalApp
+            isModalOpen={isOpenForm}
+            setIsOpenForm={setIsOpenForm}
+          ></ModalApp>
+        </div>
+      )}
     </div>
   );
 };
