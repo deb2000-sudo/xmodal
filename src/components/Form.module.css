@@ -1,14 +1,9 @@
-.myapp{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.mybutton{
-    padding: 0.8rem;
-    background-color: rgb(0,123,255);
-    border-radius: 10px;
-    color: white;
-    border-color: rgb(0,123,255);
-    width: 8rem;
+.modalButton {
+  height: 40px;
+  width: 118px;
+  border-radius: 6px;
+  border: none;
+  background-color: #007aff;
+  color: white;
+  font-size: 15px;
 }

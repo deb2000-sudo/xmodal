@@ -1,8 +1,6 @@
-import Modal from "react-modal";
-import { useState } from "react";
-Modal.setAppElement("#root");
+import React, { useState } from "react";
 
-const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
+const ModalApp = ({ setIsOpenForm, setOpenModal }) => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -11,7 +9,15 @@ const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
   });
   // console.log(isModalOpen);
   const handleModalClose = () => {
-    setIsOpenForm(false);
+    setIsOpenForm((prev) => !prev);
+    setOpenModal((prev) => !prev);
+    setFormData((prevData) => ({
+      ...prevData,
+      username: "",
+      email: "",
+      phone: "",
+      dob: "",
+    }));
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,24 +59,15 @@ const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
     console.log("Form Data Submitted:", formData);
     handleModalClose();
   };
-  const customStyles = {
-    content: {
-      top: "12%",
-      maxWidth: "700px",
-      margin: "auto",
-      borderRadius: "10px",
-      padding: "25px",
-      maxHeight: "600px",
-    },
-  };
+
   return (
-    <Modal
-      isOpen={isModalOpen}
-      onRequestClose={handleModalClose}
-      shouldCloseOnOverlayClick={true}
-      style={customStyles}
-    >
-      <div className="modal-content">
+    <div class="modal" onClick={handleModalClose}>
+      <div
+        className="modal-content"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <h3 className="text-center mb-4">Fill Details</h3>
         <form onSubmit={handleSubmit}>
           <div className="form-group mb-3">
@@ -126,7 +123,7 @@ const ModalApp = ({ isModalOpen, setIsOpenForm }) => {
           </button>
         </form>
       </div>
-    </Modal>
+    </div>
   );
 };
 
